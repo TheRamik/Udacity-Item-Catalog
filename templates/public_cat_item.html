@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider blue">
+	<div class="col-md-12"></div>
+</div>
+<div class="row banner main white-bg">
+	<div class="col-md-11 col-md-offset-1 padding-none">
+		<h1>{{ item.name }}</h1>
+	</div>
+</div>
+<div class="row padding-top">
+	<div class="col-md-10"></div>
+</div>
+
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class="blue-rcorners white-bg">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-3">
+			<h2>Description</h2>
+		</div>
+	</div>
+	<div class="row hl"></div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-11">
+			<h3>{{item.description}}</h3>
+		</div>
+	</div>
+</div>
+
+<div class="row padding-bottom">
+	<div class="col-md-10"></div>
+</div>
+{% endblock %}
